@@ -1,0 +1,105 @@
+body{
+  width: 1528px;
+  height: 1835px;
+  margin: 0 auto;
+  /* border: 2px solid blue; */
+}
+.index{
+  width: 1200px;
+  margin: auto;
+}
+.tou{
+  height: 84px;
+  line-height: 84px;
+  padding: 16px 0;
+}
+ul,.tou img,.tou li{
+  float: left;
+}
+.Node li{
+  margin-left: 40px;
+}
+.che{
+  float: right;
+}
+.che li{
+  margin-right: 30px;
+}
+.che img{
+  margin-top: 30px;
+  margin-right: 7px;
+}
+.box{
+  width: 1200px;
+}
+.jiantou{
+  width: 240px;
+  background-color: dodgerblue;
+  float: left;
+}
+.jiantou .xian{
+  width: 180px;
+  height: 72px;
+  line-height: 72px;
+  border-bottom:1px solid aqua;
+  margin: auto;
+
+}
+.jiantou .xian0{
+  width: 180px;
+  height: 72px;
+  line-height: 72px;
+  margin: auto;
+}
+.jiantou img{
+  float: right;
+  margin-top: 30px;
+}
+.zhufengapp{
+  float: left;
+  height: 365px;
+  background-color: blue;
+}
+.zhufengapp img{
+  margin-top: 67px;
+  margin-right: 33px;
+}
+.shizhan{
+  display: inline-block;
+  width: 1200px;
+  margin-top: 40px;
+}
+.qian .qian0{
+  margin-top: 20px;
+  margin-right: 50px;
+}
+.qianduan{
+  width: 1200px;
+  float: left;
+  margin-top: 60px;
+}
+.q1{
+  width: 224px;
+}
+.q2{
+  width: 397px;
+  margin-left: 15px;
+}
+.q3{
+  width: 254px;
+  margin-left: 15px;
+  margin-top: 50px;
+}
+.q4{
+  margin-left: 15px;
+}
+.qianduan div{
+  float: left;
+}
+.di{
+  width: 1200px;
+  height: 370px;
+  background-color: black;
+  display: inline-block;
+  margin-top: 60px;
+}

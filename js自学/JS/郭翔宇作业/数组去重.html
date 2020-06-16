@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组去重</title>
+</head>
+
+<body>
+  <script>
+    let ary = [12, 23, 34, 12, 12, 12, 23, 34, 23];
+    function nums(ary) {
+      let obj = [];
+      for (var i = 0; i < ary.length; i++) {
+        obj[ary[i]] = ary[i]
+      }
+      let newAry = [];
+      for (var num in obj) {
+        newAry.push(obj[num])
+      }
+      return newAry
+    }
+    console.log(nums(ary))
+  </script>
+</body>
+
+</html>

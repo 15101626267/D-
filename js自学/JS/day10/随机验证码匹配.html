@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    div {
+      display: flex;
+      text-align: center;
+      width: 255px;
+      margin: 20px auto;
+    }
+
+    span {
+      display: block;
+      width: 200px;
+      height: 30px;
+      line-height: 30px;
+      border: 1px solid red;
+      margin-right: 5px;
+    }
+
+    button {
+      height: 30px;
+      line-height: 30px;
+      width: 50px;
+      background: orangered;
+    }
+
+    input {
+      display: block;
+      width: 200px;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <span id="show"></span><button id="btn">按钮</button>
+  </div>
+  <input type="text" id="input">
+  <script>
+    /* 
+    点击按钮，就会随机生成一个四位的验证码
+     */
+    let btn = document.getElementById('btn');
+    let show = document.getElementById('show');
+
+    function createCode() {
+      /* 
+      随机产生一个索引，利用索引取字符串中取值
+       */
+      let str = '123456789asdfghjklASDFGHJKL';
+      let value = '';
+      for (var i = 0; i < 4; i++) {
+        // n,m n = 0   m = str.length-1
+        let index = Math.round(Math.random() * (str.length - 1)); // 产生的随机索引
+        let item = str[index];
+        value += item;
+      }
+      show.innerHTML = value
+    }
+    btn.onclick = createCode;
+    createCode();
+
+    input.onblur = function () {
+
+      let inputVlaue = this.value.toLowerCase();
+      let showValue = show.innerText.toLowerCase();
+      console.log(inputVlaue)
+      console.log(showValue)
+      if (inputVlaue == showValue) {
+        alert('验证通过')
+      }
+      else {
+        alert('验证码错误')
+        createCode();
+        this.value = '';
+      }
+    }
+  </script>
+</body>
+
+</html>

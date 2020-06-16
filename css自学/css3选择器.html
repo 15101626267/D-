@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li:nth-child(1){
+            background:pink;
+        }
+        /* 偶数 */
+        ul>li:nth-child(even){
+            background:yellow;
+        }
+        /* 奇数 */
+        ul>li:nth-child(odd){
+            background:green;
+        }
+        ul>li:nth-child(3n){
+            background:yellow;
+        }
+       ul>li:nth-child(3n+1){
+            background:darkorange;
+        }
+        ul>li:nth-child(3n+2){
+            background:darkturquoise;
+        }
+         /* 第一个 */
+        ul>li:first-child{
+            background:darkviolet;
+        }
+        /* 最后一个 */
+        ul>li:last-child{
+            background:dodgerblue;
+        }
+        /* 倒数第几个 */
+        ul>li:nth-last-child(2){
+            background-color: firebrick;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

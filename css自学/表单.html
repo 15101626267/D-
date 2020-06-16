@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input,
+        textarea {
+            /* 去除蓝色线 */
+            outline: none;
+            /* 禁止改变textarea的 尺寸 */
+            resize: none;
+        }
+
+        textarea {
+            /* 不能让用户通过拖拽改变大小 */
+            resize: none;
+            /* 去除点击时候蓝色基线 */
+            outline: none;
+        }
+
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <!-- 文本输入框 required 非空校验-->
+        <input type="text" placeholder="请设置用户名" required>
+        <!-- 密码输入框 autofocus 自动获取焦点-->
+        <input type="password" autofocus required>
+        <!-- 重置按钮 -->
+        <input type="reset">
+        <!-- 按钮 -->
+        <input type="button" value="支付">
+        <!-- 单选 -->
+        <input type="radio" checked>
+        <!-- 多选 placeholder 提示文字 autofocus 自动获取焦点 checked （input的默认选中） -->
+        <input type="checkbox" checked>
+        <!-- 按钮 -->
+        <button>支付2</button>
+        <!-- 提交按钮 -->
+        <input type="submit">
+        <!-- 文本域 -->
+        <textarea name="" id="" cols="100" rows="30"></textarea>
+        <!-- 下拉框 默认选中selected   禁止被选中disabled -->
+        <select name="" id="">
+            <option value="" disabled>上海</option>
+            <option value="">北京</option>
+            <option value="">江苏</option>
+            <option value="" selected>河南</option>
+        </select>
+
+        <!-- 数字 -->
+        <input type="number">
+        <!-- 搜索 移动端 -->
+        <input type="search">
+        <!-- 电话 -->
+        <input type="tel">
+        <!-- 颜色 面板-->
+        <input type="color">
+        <!-- 范围 -->
+        <input type="range">
+        <!-- 上传文件 -->
+        <input type="file">
+        <!-- 日期 -->
+        <input type="date">
+        <!-- 邮件 -->
+        <input type="email">
+
+    </form>
+</body>
+
+</html>

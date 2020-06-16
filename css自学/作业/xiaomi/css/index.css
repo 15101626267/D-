@@ -1,0 +1,108 @@
+.md{
+  margin: 0 auto;
+  height: 460px;
+}
+.bannerWrap{
+  width: 1226px;
+  margin-top: 50px;
+  /* border: 1px solid aqua; */
+  /* 参照物 */
+  position: relative;
+}
+img{
+  width: 1226px;
+  height: 460px;
+}
+.bannerBar{
+  /* 绝对定位 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 234px;
+  height: 100%;
+  background: rgba(105, 101, 101, .6);
+  padding: 20px 0;
+  /* 转换成IE盒模型 */
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.bannerBar li{
+  /* 首行缩进30px */
+  text-indent: 30px;
+  height: 42px;
+  /* 文字垂直居中 */
+  line-height: 42px;
+  background: url("../images/arrow.png") 200px center no-repeat;
+}
+.bannerBar a{
+  color: #fff;
+  display: block;
+  height: 100%;
+}
+.bannerBar li:hover{
+  background-color: darkorange;
+}
+
+.leftArrow,.rightArrow{
+  width: 41px;
+  height: 69px;
+  /* background: pink; */
+  /* 绝对定位 参照物是md */
+  position: absolute;
+  /* 垂直居中 top：50% margin-top=-盒子高度的一半 */
+  top: 50%;
+  margin-top: -35px;
+  background: url("../images/icon-slides.png") no-repeat;
+}
+.leftArrow{
+  left: 234px;
+  background-position: -84px 0;
+}
+.rightArrow{
+  right: 0;
+  background-position: -126px 0;
+}
+.leftArrow:hover{
+  /* background: url("../images/icon-slides.png") no-repeat; */
+  background-position: 0 0;
+}
+.rightArrow:hover{
+  /* background: url("../images/icon-slides.png") no-repeat; */
+  background-position: -42px 0;
+}
+.bannerWrap ol{
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  /* background-color: pink; */
+  right: 15px;
+  bottom: 17px;
+}
+.bannerWrap ol li{
+  width: 8px;
+  height: 8px;
+  background-color: rgba(105, 101, 101, .6);
+  border: 2px solid black;
+  float: left;
+  /* 方块变圆 */
+  border-radius: 50%;
+  margin-left: 10px;
+}
+.bannerWrap ol li:hover{
+  background-color: seashell;
+}
+.contentt{
+  width: 994px;
+  height: 460px;
+  position: absolute;
+  background-color: chartreuse;
+  left: 234px;
+  top: 0;
+  display: none;
+  /* 控制层级 */
+  z-index: 1;
+}
+.bannerBar li:hover .contentt{
+  display: block;
+}

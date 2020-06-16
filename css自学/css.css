@@ -1,0 +1,65 @@
+div{
+  display: inline;
+  display: block;
+  display: inline-block;
+  display: none;
+  /* 边框 dashen虚线，大多数浏览器呈现为实线 solid实线 double双线*/
+  border: 2px dashed blue;
+  /* 保持比例缩小至背景最小大小  最大为contain 或第一个值为宽 第二个为高*/
+  background-size: cover;
+  /* 背景图片位置 可以是像素或百分比*/
+  background-position:center center;
+  /* 默认情况下背景图片会随着页面的滚动而滚动 */
+  background-attachment: scroll;
+  /* 让背景图片固定，不随着页面的滚动而滚动 */
+  background-attachment: fixed;
+  /* 控制背景图片是否平铺：水平方向平铺 */
+  background-repeat: repeat-x;
+  /* 鼠标指针变小手 */
+  cursor: pointer;
+  /* 显示已隐藏的内容 */
+  display: block;
+  /* 转换成ie盒模型 */
+  box-sizing: border-box;
+  /* 圆角 四个值就是顺时针顺序 */
+  border-radius:50%;
+  /* 阴影 1水平偏移 2垂直偏移 3模糊度 4大小 5颜色 6默认是outset外隐形  inset内阴影*/
+  box-shadow:0px 0px 10px 10px #fff;
+  /* 超出隐藏 */
+  overflow:hidden;
+  /* 静态定位 */
+  position: static;
+  /* 相对定位 */
+  position: relative;
+  /* 绝对定位 */
+  position: absolute;
+  /* 固定定位 */
+  position: fixed;
+  }
+
+ul,ol{
+  /* 清除列表前面默认的样式 */
+  list-style: none;
+  }
+
+a{
+  /* 清除a标签下划线 */
+  text-decoration: none;
+  }
+
+p{
+  /* 首行缩进2个字符，也可以换成像素 */
+  text-indent: 2em;
+  /* 文字大小 */
+  font-size: 20px;
+  /* 文字字体 中文需要双引号或单引号，引文不需要 */
+  font-family: Arial, Helvetica, sans-serif;
+  /* 文字粗细 100-900 其中400为正常 */
+  font-weight: 400;
+  /* 文字倾斜 */
+  font-style: italic;
+  /* 文字水平靠左 默认 */
+  text-align:left;
+  /* 文字水平居住 */
+  text-align: center;
+  }

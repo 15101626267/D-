@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<!--header-->
+<header>
+    <a href="javascript:;" class="logo"></a>
+    <a class="menu"></a>
+</header>
+<!--banner-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image:url('images/banner1.png')"></div>
+        <div class="swiper-slide" style="background-image:url('images/banner2.png')"></div>
+        <div class="swiper-slide" style="background-image:url('images/banner3.png')"></div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+
+
+
+</div>
+
+<!--allClass-->
+<div class="allClass">
+   <h3 class="clearfix">
+       <div class="book"></div>
+       <span>全部课程</span>
+   </h3>
+   <ul class="classLists">
+       <li>
+           <a href="javascript:;">
+               <div class="classCover"></div>
+               <div class="classText">
+                   <h4>Vue.js从理论精讲到项目实战课程</h4>
+                   <p>￥5000.00元</p>
+               </div>
+           </a>
+       </li>
+       <li>
+           <a href="javascript:;">
+               <div class="classCover"></div>
+               <div class="classText">
+                   <h4>Vue.js从理论精讲到项目实战课程</h4>
+                   <p>￥5000.00元</p>
+               </div>
+           </a>
+       </li>
+       <li>
+           <a href="javascript:;">
+               <div class="classCover"></div>
+               <div class="classText">
+                   <h4>Vue.js从理论精讲到项目实战课程</h4>
+                   <p>￥5000.00元</p>
+               </div>
+           </a>
+       </li>
+   </ul>
+</div>
+
+<!--footer-->
+<ul class="footer">
+  <li class="current">
+      <a href="javascript:;" class="indexIcon ">
+          <div class="icon"></div>
+          <p class="iconText">首页</p>
+      </a>
+  </li>
+    <li>
+        <a href="javascript:;" class="classIcon">
+            <div class="icon"></div>
+            <p class="iconText">我的课程</p>
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;" class=" centerIcon">
+            <div class="icon"></div>
+            <p class="iconText">个人中心</p>
+        </a>
+    </li>
+</ul>
+
+</body>
+</html>
+<script src="js/swiper.min.js"></script>
+<script>
+    function refreshRem() {
+        var desW = 640,
+            winW = document.documentElement.clientWidth||document.body.clientWidth;
+        ratio = winW / desW;
+        document.documentElement.style.fontSize = ratio * 100 + 'px';
+    }
+    refreshRem();
+    window.addEventListener('resize', refreshRem);
+
+</script>
+<script>
+    window.onload=function(){
+        var mySwiper = new Swiper ('.swiper-container', {
+            loop: true, // 循环模式选项
+            autoplay:true,//自动播放
+            // 如果需要分页器
+            pagination: {
+                el: '.swiper-pagination',
+            }
+        })
+    }
+</script>

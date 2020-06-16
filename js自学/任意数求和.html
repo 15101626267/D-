@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>任意数求和</title>
+</head>
+
+<body>
+  <script>
+    function sum() {
+      // arguments // 实参集合，他是一个类数组，每一个实参都在里边
+      // 累加求和，在求和的时候判断一个当前数据类型转数字是不是非有效数字
+      let total = null;
+      for (var i = 0; i < arguments.length; i++) {
+        var a = Number(arguments[i]);
+        if (!isNaN(a)) {
+          total += a;
+        }
+      }
+      return total;
+    }
+    let total = sum(1, true, false, NaN, undefined, 5, 5);
+    console.log(total)
+  </script>
+</body>
+
+</html>

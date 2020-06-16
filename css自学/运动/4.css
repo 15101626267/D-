@@ -1,0 +1,30 @@
+.dead{
+  width: 200px;
+  height: 312px;
+  background: url("./dead.png") no-repeat;
+  animation: dead 0.5s steps(10) infinite,run 5s linear infinite; ;
+}
+@keyframes dead{
+  100%{
+    background-position: -2000px,0;
+  }
+}
+@keyframes run{
+  0%{
+    transform:translate(100vw,0);
+  }
+  100%{
+      transform:translate(-200px,0);
+  }
+}
+.garil{
+  width: 241px;
+  height: 187px;
+  background: url(./smile.jpg) no-repeat;
+  animation:smile 2s steps(6) infinite ;
+}
+@keyframes smile{
+  100%{
+    background-position: -1446px,0;
+  }
+}

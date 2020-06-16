@@ -1,0 +1,9 @@
+div{
+  /* 彻底消失 不占位置 */
+  display: none;
+  /* 看不见 但位置还在 可见性为不可见 */
+  visibility: hidden;
+  /* 看不见 但位置还在 透明度为0 */
+  opacity: 0;
+  
+  }

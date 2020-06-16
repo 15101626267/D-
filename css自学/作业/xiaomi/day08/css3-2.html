@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选中所有儿子中的第几个 */
+     .main>h3:nth-last-child(4){
+         background:firebrick;
+     }
+     /* 选中儿子元素中特定类型中的第几个 */
+     .main>h3:nth-of-type(2){
+         background:fuchsia;
+     }
+     .main>p:nth-of-type(2n){
+         background:gold;
+     }
+     .main>p:first-of-type{
+         background:darkturquoise;
+     }
+     .main>p:last-of-type{
+         background:dodgerblue;
+     }
+     .main>p:nth-last-of-type(2){
+         background:deeppink;
+     }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p>p1</p>
+        <p>p2</p>
+        <p>p3</p>
+        <h3>h1</h3>
+        <p>p2</p>
+        <h3>h2</h3>
+        <p>p3</p>
+    </div>
+</body>
+</html>

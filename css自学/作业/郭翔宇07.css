@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+.clearfix::after {
+  content: "";
+  font-size: 0;
+  visibility: hidden;
+  height: 0;
+  display: block;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+a {
+  text-decoration: none;
+}
+.nav{
+  height: 40px;
+  background-color: #333;
+  line-height: 40px;
+  font-size: 12px;
+  color: rgb(176, 176, 176)
+}
+.md{
+  height: 40px;
+  width: 1226px;
+  margin: 0 auto;
+}
+.left{
+  height: 40px;
+  float: left;
+}
+.right{
+  height: 40px;
+  float: right;
+}
+.nav a{
+  color: rgb(176, 176, 176)
+}
+.nav .line{
+  color: #424242;
+  margin-left: 4px;
+}
+.nav .left>a,.nav .left>.line{
+  float: left;
+}
+.nav a:hover{
+  color: #fff;
+}
+.nav .right>a,.nav .right>.line{
+  float: left;
+}
+.nav .cart{
+  width: 120px;
+  background: #424242;
+  text-align: center;
+  margin-left: 30px;
+}
+.nav .cart:hover{
+  background-color: cornsilk;
+  color: coral;
+}
+
+.box{
+  width: 1226px;
+  margin: 10px auto;
+}
+.wenzi{
+  height: 50px;
+  line-height: 50px;
+}
+.wenzi .shouji{
+  float: left;
+  font-weight: 200;
+  font-size: 30px;
+}
+.wenzi .chakan{
+  float: right;
+  color: #333;
+}
+.box .tupian .mix{
+  width: 234px;
+  height: 614px;
+  background-color: #333;
+  float: left;
+}
+.box .tupian .phone{
+  float: left;
+}
+li{
+  width: 234px;
+  height: 300px;
+  line-height: 300opx;
+  margin-left: 14px;
+  margin-bottom: 14px;
+  background-color: turquoise;
+  float: left;
+}

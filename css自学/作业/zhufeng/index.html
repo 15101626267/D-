@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        window.onload=function(){
+            function refreshRem() {
+                // 设计稿的宽度
+                var desW = 640,
+                    winW = document.documentElement.clientWidth || document.body.clientWidth;
+                var main=document.getElementById("main"); 
+                if(winW>=desW){
+                  document.documentElement.style.fontSize="100px";
+                  main.style.width=desW+"px";
+                  return
+                }   
+                var ratio = winW / desW;
+                main.style.width="100%";
+                document.documentElement.style.fontSize = ratio * 100 + 'px';
+            }
+            refreshRem();
+            window.addEventListener('resize', refreshRem);
+        }
+    </script>
+  
+</head>
+<body>
+    <section class="main" id="main">
+        <header>
+            <a class="logo" href=""></a>
+            <a class="menu" href=""></a>
+        </header>
+        <!-- 主要内容区 -->
+        <main>
+            <section class="bannerBox">
+                <ul>
+                    <li>
+                        <a href="">
+                            <img src="images/banner.png" alt="">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <section class="content">
+                <h3 class="contentTop">
+                    全部课程
+                </h3>
+                <ul class="contentBottom">
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="item" href="">
+                            <section class="itemImg"></section>
+                            <section class="itemInfo">
+                                <h4>Vue.js从理论精讲到项目实战课程</h4>
+                                <p>¥599.00元</p>
+                            </section>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </main>
+        <footer>
+            <a href="" class="current" >
+                <section class="icon icon1"></section>
+                <p>首页</p>
+            </a>
+            <a href="" >
+                <section class="icon icon2"></section>
+                <p>首页</p>
+            </a>
+            <a href="" >
+                <section class="icon icon3"></section>
+                <p>首页</p>
+            </a>
+           
+        </footer>
+    </section>
+</body>
+</html>
+   

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>双for循环</title>
+</head>
+<body>
+  <script>
+    let ary = [23, 22, 11, 23, 23, 22, 11];
+    function unique(ary) {
+      // 循环数组的每一项，把数组的每一项和他后面的值一一比较，如果后面的值和当前项相同，就把这一项在原数组中删除
+      for (var i = 0; i < ary.length; i++) {
+        var cur = ary[i] // 23 22
+        // 那23去和他后面的值一一做比较
+        for (var j = i + 1; j < ary.length; j++) {
+          var next = ary[j] // 
+          // j=1  22
+          // j=2  11
+          // j=3  23
+          if (cur === next) {
+            ary.splice(j, 1);
+            j--;
+          }
+        }
+      }
+      return ary
+    }
+    console.log(unique(ary))
+  </script>
+</body>
+</html>

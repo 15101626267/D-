@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='UTF-8'>
+<meta name='keywords' content='关键词'>
+<meta name='description' content='描述的文字'>
+<title>Document</title>
+<style>
+     *{
+            margin:0;padding:0px;
+      }
+    .box{
+        width:200px;
+        height:200px;
+        background:green;
+        /* 水平移动500px */
+        /* transform: translateX(500px); */
+        /* 垂直移动500px */
+        /* transform:translateY(500px); */
+        /* 
+          第一个值代表的是水平
+          第二个值代表的是垂直
+         */
+        transform:translate(200px,300px);
+        /* 
+        如何让一个元素在屏幕中水平垂直居中第二种方法
+        position:absolute;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%); 
+        */
+    }
+</style>
+</head>
+<body>
+<div class="box"></div>
+</body>
+</html>

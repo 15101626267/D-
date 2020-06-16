@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串拼接</title>
+</head>
+<body>
+  <div id="ss">
+    <p>111</p>
+  </div>
+  <input type="text" id="content">
+  <button id="btn">确定</button>
+  <script>
+    // 像操作谁就获取谁
+    let ss = document.getElementById("ss"),
+        content = document.getElementById("content")
+        btn = document.getElementById("btn")
+    // 给相应元素绑定相应事件 
+    btn.onclick = function(){
+      // 先获取到input的值
+      // 然后生成一个p标签，p标签的内容是input的值
+      // 把p标签累加到ss元素里
+      // 表单元素的内容用value获取
+      let value = content.value;
+      let res = '<p>' + value + '</p>';
+      ss.innerHTML += res;
+      content.value = '';
+      console(res)
+    }
+  </script>
+</body>
+</html>

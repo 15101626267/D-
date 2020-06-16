@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background:green;
+            /* 
+             第一个值：动画名字
+             第二个值：动画时间
+             第三个值：运动曲线
+             第四个值：延迟时间
+             第五个值：运动的次数，可以是具体的数值，如果想要无限循环infinite;
+            */
+            animation:run 1s linear 0s infinite;
+            animation:run 1s linear 1s both ;
+        }
+        @keyframes run{
+            0%{
+              transform:translate(300px,0);
+            }
+            100%{
+                transform:translate(300px,800px);
+                background:yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

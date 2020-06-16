@@ -1,0 +1,33 @@
+.box{
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  margin: 10px auto;
+}
+.car{
+  width: 100px;
+  height: 100px;
+  background-color: chartreuse;
+  animation:run 10s linear 0s infinite ;
+}
+@keyframes run{
+  0%{
+    transform:translate(0,0);
+  }
+  25%{
+    transform:translate(400px,0);
+    background-color: chocolate;
+  }
+  50%{
+    transform:translate(400px,400px);
+    background-color: cornflowerblue;
+    border-radius: 50%;
+  }
+  75%{
+    transform:translate(0,400px);
+    background-color: darkgray;
+  }
+  100%{
+      transform:translate(0,0);
+  }
+}

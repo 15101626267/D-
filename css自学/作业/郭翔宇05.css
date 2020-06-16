@@ -1,0 +1,75 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.box{
+  width: 450px;
+  height: 550px;
+  background: lightblue;
+  /* margin: 20px auto; */
+  /* overflow: hidden; */
+  position: absolute;
+  right: 110px;
+  top: 60px;
+}
+h1{
+  margin: 30px 50px 0px 30px;
+}
+.p0{
+  color: navajowhite;
+  text-indent: 30px;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.denglu{
+  color: blue;
+  text-decoration: none;
+  }
+form div{
+  margin: 30px;
+
+}
+
+
+.zhuce{
+  width: 350px;
+  height: 50px;
+  background-color: blueviolet;
+  margin: 0px 50px;
+  border-radius: 25px;
+}
+.p1,.p2{
+  height: 50px;
+}
+.p1 input,.p2 input{
+  height: 30px;
+  margin: 15px 15px;
+}
+.p1 input{
+  width: 300px;
+
+}
+.p2 input{
+  width: 182px;
+
+}
+
+
+.xieyi{
+  font-size: 12px;
+  color: lightslategrey;
+  text-align: center;
+  margin-top: 10px;
+}
+.xieyia{
+  color: blue;
+  text-decoration: none;
+}
+.yan{
+  width: 100px;
+  height: 35px;
+  margin-right: 10px;
+
+
+}
