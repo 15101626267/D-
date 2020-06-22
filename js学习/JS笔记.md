@@ -1,5 +1,4 @@
-- import  导入
-- onclick 当点击的时候    
+- import  导入 
 - 给客户看的
   + alert 浏览器弹出框，只有确定按钮，都会被转化为字符串toString
     + confirm 增加了取消  点击确当接收true 点击取消接受false

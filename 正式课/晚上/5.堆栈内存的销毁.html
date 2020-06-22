@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    // 函数执行形成不销毁的作用域，这个作用域可以把变量保存起来，而且还可以保护变量不受外界干扰==>这种函数执行的保护机制就是闭包机制
+
+    // 上一级作用域：当前函数在哪创建的，那上一级作用域就是哪，跟函数在哪执行的没有关系
+
+    // 函数执行时，如果遇到一个变量，首先看自己的作用域有没有，如果有就用自己的，如果没有，就直接往上一级作用域去获取，如果上一级也没有，那就往上一级的上一级去获取，知道获取到全局为止，如果还没有，就直接报错
+
+        // var i = 5;
+        // function fn(i) {
+        //     return function (n) {
+        //         console.log(n + (++i));
+        //     }
+        // }
+        // var f = fn(1);
+        // f(2);
+        // fn(3)(4);
+        // fn(5)(6);
+        // f(7);
+        // console.log(i);
+
+
+
+        //     var num = 1;
+        //     var obj = {
+        //         num: 10,
+        //         fn: (function (num) {
+        //             var num = 2; 
+        //             return function (n) {
+        //                 console.log(n * (num++)); 
+        //             }
+        //         })(num) // 1
+        //     }
+        //     var f = obj.fn;
+        //     f(10);
+        //     f(20);
+        //     obj.fn(30);
+        //     obj.fn(40);
+        //    console.log(f === obj.fn)
+
+
+
+
+          // var a = 9; // 0 1 0 1 2
+        // function fn() {
+        //     a = 0;
+        //     return function (b) { // 5
+        //         return b + a++; // 5+0  5+1
+        //     }
+        // }
+        // var f = fn(); // f
+        // console.log(f(5))
+        // var n = fn()(5); // 5
+        // console.log(n); // 5 
+        // var x = f(5); // 6
+        // console.log(x); // 6
+        // console.log(a); 2
+    </script>
+</body>
+
+</html>

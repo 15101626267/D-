@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        变量提升特殊情况
+         */
+        // 1.变量提升发生在等号左边
+        // console.log(fn); // un
+        // var fn = function(){}
+        // 2.不管if条件是否成立，都要进行变量提升
+
+        /* 
+        num
+         */
+        // console.log(num); //un
+        // if(false){
+        //     var num = 12;
+        // }
+        // console.log(num); // un
+
+
+
+        /* 
+        fn
+         */
+        // console.log(fn); // un
+        // if(false){
+
+        //     // 在if条件里function只声明不定义
+        //     function fn(){}
+        // }
+        // console.log(fn); // un
+
+
+        /* 
+        fn = af0
+         */
+        // console.log(fn); // un
+        // if(true){
+        //     // 如果条件一旦成立，要做的第一件事就是马上给函数名赋值
+        //     fn();
+        //     // 现版本浏览器在if条件里function只声明不定义
+        //     // 老版本浏览器 if判断里面的function 变量提升是声明加定义
+        //     function fn(){} // af0
+        // }
+        // console.log(fn); // af0
+
+        // 3.函数里return下面的代码虽然不执行，但是要进行变量提升
+
+        // function fn(){
+        //     /* 
+        //     ss
+        //     f = fun
+        //      */
+        //     console.log(ss,f); // un  fun
+        //     return 1;
+        //     var ss = 100;
+        //     function f(){
+
+        //     }
+        // }
+        // fn()
+
+        // 4.匿名函数不进行变量提升
+
+        // (function(){})() // 当代码执行到这一行马上进行定义，然后马上进行执行
+
+        /* 
+        obj = 
+            */
+        // var obj = {
+        //         fn: (function () {
+        //             console.log(100); // 100
+        //             return function () { // af0
+        //                 console.log(666)
+        //             }
+        //         })()
+        //     };
+
+
+
+        // console.log(obj.fn())
+
+ 
+
+        //     console.log(200)
+        //     obj.fn(); // 666
+        //     // obj.fn(); // 666
+        //     console.log(obj.fn); af0
+
+
+        // let s = (function () {
+        //     console.log(100); // 100
+        //     return function () { // af0
+        //         console.log(666)
+        //     }
+        // })()
+
+        // console.log(s)
+
+
+        // let obj = {
+        //     fn:(function(){
+        //         return function(){console.log(666);}
+        //     })()
+        // }
+
+        // obj.fn()
+
+        // (function(){})()
+        // let f = function(){}
+
+
+
+
+
+
+        // in 属性 检测当前对象中有没有某个属性名，如果有就返回true，如果没有就返回false
+
+        // let obj = {
+        //     name: undefined
+        // }
+        // console.log('name' in obj); // true
+        // console.log('age' in obj); // false
+        
+        let obj = {
+            fn:(function(){
+                return 1
+            })()
+        }
+        console.log(obj.fn) // 1
+
+
+        // this 作用域是否销毁 以及大量的练习
+
+
+    </script>
+</body>
+
+</html>

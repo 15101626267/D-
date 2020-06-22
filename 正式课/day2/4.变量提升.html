@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        变量提升
+        变量提是浏览器解析代码的一个过程
+        // 在当前作用域，代码执行之前，浏览器会对当前作用域里带var的和带function的进行提前的声明(创建)和定义(赋值)；带var的只声明不定义，带function的既声明又定义
+         */
+
+        /* 
+        词法解析
+        变量提升
+        a = 12
+         */
+        // console.log(a); // un
+        //  var a = 12;
+        //  console.log(a); // 12
+
+        /* 
+        a
+        window.a
+        */
+
+        // console.log(window.a); // un
+        // console.log(b); // 报错
+        // var a = 10; // 给window增加键值对的过程是在变量提升阶段发生的
+        //     b = 10;
+
+
+
+        // console.log(1
+
+        // var a = b = c = 12; // 等价于 var a = 12;b=12;c=12;
+        // var a = 12;
+        // b = 12;
+        // c = 12;
+
+
+        // var a,b,c = 12; // 等价于var a;var b;var c = 12;
+        // var a;
+        // var b;
+        // var c = 12;
+
+        // var a = 12,b = 13, c = 14; // var a = 12; var b = 13; var c = 14;
+        // var a = 12;
+        // var b = 13;
+        // var c = 14;
+
+        /* 
+        a
+         */
+
+        // console.log(a); // un
+        // console.log(b); // 报错
+        // var a = b =  12;
+        // var a = 12;
+        // b = 12
+
+        /* 
+        a
+        b
+        c = 10
+        
+         */
+
+        // console.log(a); // un
+        // console.log(b); // un
+        // console.log(c); // un
+        // var a, b, c = 10;
+        // // var a;
+        // // var b;
+        // // var c = 10;
+        // console.log(a); // un
+        // console.log(b); // un
+        // console.log(c); // 10
+
+        // un 报错 报错 10 10 10
+
+        // 在当前作用域，代码执行之前，浏览器会对当前作用域里带var的和带function的进行提前的声明(创建)和定义(赋值)；带var的只声明不定义，带function的既声明又定义
+
+        /* 
+        fn =af0
+         */
+        // fn() // 不报错可以执行
+        // function fn(){ af0
+        //     console.log(10)
+        // }
+
+        // 函数的执行
+        // 1、首先开辟一个私有的作用域
+        // 2、形参赋值
+        // 3、变量提升
+        // 4、代码从上往下执行
+        // 5、当前做作用域是否销毁
+
+      
+      // 在当前作用域，代码执行之前，浏览器会对当前作用域里带var的和带function的进行提前的声明(创建)和定义(赋值)；带var的只声明不定义，带function的既声明又定义
+      /* 
+      name = 'jinYu'
+      fn = af0
+       */
+        // var name = 'jinYu';
+        // function fn(name) { // af0
+        //     /* 
+        //     name = 'jinYu' af1
+        //      */
+        //     console.log(name); // 函数
+        //     function name() { } // af1
+        //     console.log(name); // 函数
+        // };
+        // fn(name);
+
+
+        /* 
+        fn = af0 af1 af2  af3 af4
+         */
+        // fn(); // 5
+        // function fn() { // af0
+        //     console.log(1);
+        // };
+        // fn(); // 5
+        // function fn() { // af1
+        //     console.log(2);
+        // };
+        // fn(); // 5
+        // var fn = function () { //af4  等号右边的不会进行变量提升
+        //     console.log(3);
+        // };
+        // fn(); // 3
+        // function fn() { // af2
+        //     console.log(4);
+        // };
+        // fn(); // 3
+        // function fn() { // af3
+        //     console.log(5);
+        // };
+
+
+        // console.log(1);
+        // console.log(a);
+        // let a = 10;
+
+        // fn()
+        // function fn(){
+
+        // }
+
+        // console.log(a);
+        // var a =10;
+        
+
+        // es6使代码变得更加严谨
+        
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

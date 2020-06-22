@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+        1、在全局作用域下，this就是window
+        2、函数执行时，看执行函数前有没有 ".",如果有点，那点前面是谁，this就是谁，如有没有点，那this就是window
+        3、自执行函数里的this是window
+        4、给元素事件行为绑定方法，方法里的this指向被绑定的元素本身
+        5、回调函数里的this一般指向window
+         */
+
+        // var num = 100;
+        // var obj = {
+        //     num: 2,
+        //     fn: function () {
+        //         var num = 1;
+        //         console.log(this);
+        //             (function (num) {
+        //                 // this-> window
+        //                 console.log(this.num + num);
+        //             })(this.num)
+        //         
+        //     }
+        // }
+        // obj.fn();
+        // var f = obj.fn;
+        // f()
+
+
+
+        // var num = 1; // 
+        // var obj = {
+        //     num: 0, // 
+        //     fn: function () {
+        //         num = 1;
+        //         (function (num) {  // 
+
+        //             ++this.num;
+        //             num++;
+        //             console.log(num) // 
+        //         })(this.num) 
+        //     }
+        // }
+        // obj.fn(); 
+        // console.log(window.num, obj.num);
+    </script>
+</body>
+</html>

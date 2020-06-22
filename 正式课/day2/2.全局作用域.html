@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        栈内存 作用域 执行上下文
+        全局作用域和私有作用域
+        全局变量和私有变量
+
+        首先当打开一个页面的时候，就会默认形成一个全局的作用域，
+            1、为代码执行提供环境
+            2、存储基本值和变量
+        在作用域生成之后还会形成一个全局的大对象window
+            window.Number(1)
+           window.parseFloat('1')
+           // window上的方法在使用的时候可以省略window.
+
+        全局变量：在全局作用域下创建的变量就是全局变量
+        var let const function import class
+         */
+        //  var a = 12; // 全局变量
+
+        // 1、var(function)在全局作用域下创建变量的时候会给window增加键值对(let/const不支持)
+
+            // var a = 12; // 不仅在全局作用域下创建了一个变量，还会给window增加键值对，属性名就是变量名，属性值就是当前变量名所代表的值(还在有变量提升)
+            // b = 12; // window.b = 12 // 只会给window增加键值对
+            // // console.log(a)
+            // // console.log(b)
+
+            // let s = 100; // (let不支持)
+            // console.log(s) // 100
+            // console.log(window.s) // undefined
+            // console.log(window)
+
+        // 2、在同一个作用域下var可以被重复创建，但是let不可以
+
+                // var a = 12;
+                // var a = 13;
+                // console.log(a); 13
+                // 在执行的过程中如果变量已经被创建了，那以后如果还有只会给这个变量重新赋值，
+                
+
+                // 在页面代码执行之前有个语法解析的过程，如果代码不符合规范，就是直接报错，不会让页面的任何代码执行
+                // Identifier 'a' has already been declared
+                // console.log(10)
+                // let a = 12;  
+                // let a = 13;
+                // console.log(a)
+
+
+
+                // console.log(10) // 正常输出
+                // console.log(a) // 报错，下面的代码不执行
+
+                // 啥都不输出
+                // console.log(1);
+                // let a = 12;
+                // console.log(a);
+                // let a = 13;
+                // console.log(a);
+
+        // 3、var声明(创建)变量存在变量提升，但是let声明的就没有
+        // console.log(a)
+        // let a = 12;
+
+        // function fn(){
+
+        // }
+        // console.log(window.fn) // f
+        
+        // const a = 12;
+        // console.log(window.a) // un
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
