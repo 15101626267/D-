@@ -42,13 +42,13 @@
   - number 数字 [] = 0
       - console.log(Number(null))  // 0
       - console.log(Number(undefined))  // NaN
-      - console.log(Number( {} ))   // 对象转字符串都是"[object Object]" 再转数字就是 NaN
+      - console.log(Number( {} ))   // <!-- 对象转字符串都是"[object Object]" 再转数字就是 NaN -->
       - console.log(Number（[1,2,3])) // 数组转字符串'1,2,3'  再转数字就是NaN
       - console.log(Number（[]))   // <!-- 空数组转字符串是'' 再转数字是0 -->
       - console.log(Number（[1，{}])) //"1,[object Object]"  再转数字就是NaN
     + parseInt：从左到右查找有效数字，非有效为止，不识别小数
     + parseFloat：识别小数
-    + toFixed：他的返回值是一个字符串，可以保留小数位  console.log(num.toFixed(2))
+    + toFixed：他的返回值是一个字符串，可以保留小数位，还四舍五入  console.log(num.toFixed(2.9999))
     - isNaN 不是有效数字时true 是有效数字时false
   - string 字符串  ''  ""
     + 其他数据类型转字符串 val.toString
@@ -62,6 +62,14 @@
     - !  取反  !=不等于
   - null 空对象指针
   - undefind 未定义
+    + 出现undefined和null的情况
+      - 1、获取对象里的属性名对应的属性值，获取不到，那就是undefined
+      - 2、创建一个变量，但是不给他赋值，那输出他的值就是undefined
+      - 3、函数里实参不给形参赋值，那形参的值就是undefined
+      - 4、函数里没有return，那函数的执行结果就是undefined
+    + 出现null的情况
+      - 1、创建一个变量，咱们可以给他手动赋值为null
+      - 2、如果通过id名获取元素获取不到，那就是null
   - symbol 创建唯一值
   ## 四则运算  转num在运算
     - 出现NaN了，结果一定是NaN
@@ -101,6 +109,7 @@
 # 逻辑运算符
   - && 与  前面转布尔市true，取后面的值，false取自己
   - || 或  前面转布尔是true取前面的，false取后面的
+    + 先算&&后算||
   - % 取模 取余数
   - +=/-=  累加累减
   - i++/i--  先取值后运算
@@ -221,3 +230,33 @@
         - box.onclick = function(){}
     <!-- onload对应的事件会在页面代码全部加载完之后再执行 -->
     - window.onload = function(){}
+# 元素也是对象
+  - let box = document.getElementById('box');
+    在js中获取页面中的标签，在js中叫元素对象
+  - console.dir(box)   详细输出一个对象
+    + className:当前元素的class名
+    + style：元素的行间样式
+    + innerHTML：元素的内容(设置的时候是可以识别标签的)
+    + innerText: 元素的内容(不可以识别标签)
+  - console.log(box.className) // 获取class名
+  - box.className = 'xxx' // 给当前元素设置class名
+  - console.log(box.style.color) // 获取行间样式
+  - box.style.color = 'yellow' // 在js中动态设置样式
+  - console.log(box.innerHTML) // 获取当前元素的内容
+  - box.innerHTML = '<span>666</span>' // 设置当前元素的内容
+  - onsole.log(box.innerText)
+  - box.innerText = '<span>666</span>'
+# 获取dom的方法
+  - document.getElementById('id名')：通过id名去获取元素，获取的是一个元素对象，如果获取不到那就是null
+  - context.getElementsByTagName('标签名')：在指定的上下文中通过标签名获取元素,获取的值是一个元素集合(类数组)，如果获取不到就是空元素集合
+  - context.getElementsByClassName('类名')：在指定上下文中通过类名获取元素，获取的值是元素集合(类数组)，如果获取不到就是空元素集合
+  - context.querySelector():在指定的上下文中通过样式选择器获取元素，获取的值是一个元素，获取不到是null,如果有多个符合条件的元素，那就会获取第一个符合的
+  - context.querySelectorAll():在指定的上下文中通过样式选择器获取元素,获取的值是元素集合(类数组)，如果获取不到就是空元素集合
+    + document.body:获取body
+      document.documentElement:获取html
+      document.head:获取head
+    + console.log(document.getElementById('box'))
+      console.log(document.getElementsByTagName('div')[0]) // [div]获取div元素
+      console.log(document.getElementsByClassName('a'))
+      console.log(document.querySelector('ul>li'))
+      console.log(document.querySelectorAll('ul>.a'))

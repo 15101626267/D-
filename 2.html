@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function num() {
+
+      let nums = '0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM' ;
+
+      let ary = '';
+
+      for (var i = 0; i < 4; i++) {
+
+        let j = Math.round(Math.random() * (nums.length - 1 - 0) + 0);
+
+        let m = nums[j];
+
+        ary += m;
+
+      }
+
+      conlole.log(ary)
+
+    }
+  </script>
+</body>
+
+</html>
