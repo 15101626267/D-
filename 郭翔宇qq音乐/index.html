@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/inde.css">
+  <script>
+    (function () {
+      function computed() {
+        // 获取设备屏幕宽度
+        var win = document.documentElement.clientWidth || document.body.clientWidth,
+          // 设计稿宽度
+          des = 640;
+        // 如果屏幕的宽度>=设计稿的尺寸，不再动态更改字体大小，就让它是设计稿的大小
+        if (win >= 640) {
+          document.documentElement.style.fontSize = "100px";
+          return;
+        }
+        // 给html设置具体的字体大小
+        document.documentElement.style.fontSize = win / des * 100 + "px";
+
+      };
+      computed();
+      // 监听窗口是否发生改变，如果改变，就重新计算
+      window.onresize = function () {
+        computed();
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <section class="wrap">
+    <img class='bgImg' src="images/myDream.jpg" alt="">
+    <!-- 黑色遮罩层 -->
+    <section class="mark">
+      <header>
+        <!-- 歌手 -->
+        <section class="singer">
+          <img src="images/myDream.jpg" alt="" class="singerPhoto">
+          <section class="singerInfor">
+            <h4>我的梦</h4>
+            <p>张靓颖</p>
+          </section>
+        </section>
+        <!-- 音乐符 -->
+        <section class="musicIcon">
+          <img src="images/music.svg" alt="">
+        </section>
+      </header>
+      <main>
+        <section class="lyricWrap">
+          <!-- <p>我的梦 - 张靓颖</p> -->
+        </section>
+      </main>
+      <footer>
+        <section class="progressBox">
+          <!-- 已经播放的时长 -->
+          <section class="currentTime"></section>
+          <!-- 进度条 -->
+          <section class="progressTn">
+            <section class="progress"></section>
+          </section>
+          <!-- 总时长 -->
+          <span class="duration"></span>
+        </section>
+        <a class='downBtn' href="javascript:;">下载这首音乐</a>
+      </footer>
+    </section>
+    <audio id='audio' src="audio/myDream.m4a"></audio>
+  </section>
+</body>
+
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src='js/index.js'></script>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        li{
+            height: 30px;
+            line-height: 30px;
+        }
+        li:nth-child(odd){
+            background:deepskyblue;
+        }
+    </style>
+</head>
+<body>
+   <button>添加</button>
+   <ul>
+       <li>1</li>
+       <li>2</li>
+       <li>3</li>
+       <li>4</li>
+       <li>5</li>
+       <li>6</li>
+
+   </ul>
+   
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+//===>此方法，对页面中后来动态追加的元素，不会起作用
+// $("ul li").click(function(){
+//     var index= $(this).index();
+//     alert(index);
+// });
+
+
+//===>此方法，对页面中后来动态追加的元素，可以起作用（事件委托）
+$("ul").on("click","li",function(){
+     var index= $(this).index();
+     alert(index);
+})
+
+$("button").click(function(){
+   $("ul").append("<li>我是新建的</li>")
+});
+// 解绑委托事件
+$("ul").off("click","li");
+// 解绑所有的事件
+$("button").off();
+// 只把click事件解绑
+$("button").off("click");
+// 解绑多事件
+$("button").off("click mouseover");
+
+
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;padding:0;
+        }
+        /* 容器 */
+        ul{
+            list-style: none;
+            width:700px;
+            height:500px;
+            border:1px solid red;
+            margin:0 auto;
+            display:flex;
+            /* 水平轴做为主轴 */
+            flex-direction: row;
+            /* 让垂直轴作为主轴 */
+            /* flex-direction: column; */
+            /* 控制项目在主轴上的对齐方式： */
+            justify-content: flex-start;
+            justify-content: flex-end;
+            justify-content: center;
+            justify-content: space-between;
+            justify-content: space-around;
+            justify-content: space-evenly;
+            /* 控制项目在侧轴上的对齐方式 */
+            align-items: flex-start;
+            align-items: flex-end;
+            align-items: center;
+            
+        }
+        /* 项目 */
+        li{
+            width: 100px;
+            height:100px;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li></li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>

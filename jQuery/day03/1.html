@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background:green;
+            margin-top:1000px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+
+<script>
+    /* 
+      e.clientX 和 e.clientY 指到当前可视窗口的一个坐标
+      e.pageX 和e.pageY 指的是当前整个文档页面的一个坐标
+    
+     */
+
+    //  鼠标滑上 
+    $(".box").mouseover(function(e){
+      
+        console.log(e.clientX);
+        console.log(e.clientY);
+        console.log(e.pageX);
+        console.log(e.pageY);
+        // console.log("滑上")
+    })
+    // 鼠标移动
+    $(".box").mousemove(function(){
+        console.log("移动")
+    })
+    // 鼠标离开
+    $(".box").mouseleave(function(){
+        console.log("离开")
+    })
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+//   console.log( $("#box"))
+//   console.log( $(".box"))
+//   console.log( $(".current.a"))
+console.log($("ul>li:first"));
+// 索引为奇数的
+// $("ul>li:odd").css("background","red");
+// 索引为偶数的
+$("ul>li:even").css("background","red");
+// 快速选中第几个： eq(index)  index 是索引，索引是从0开始的
+// $("ul>li:eq(2)").css("background","red");
+    
+
+
+</script>

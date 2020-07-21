@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: #000;
+        }
+
+        h3 {
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 2px dashed yellow;
+            background: dodgerblue;
+            margin: 0 auto;
+            display:none;
+        }
+
+        .content {
+            width: 306px;
+            height: 306px;
+            margin: 100px auto;
+        }
+
+        .content .item {
+            width: 100px;
+            height: 100px;
+            float: left;
+            margin: 1px;
+            position:relative;
+        }
+
+        .content .item img {
+            width: 100%;
+            height: 100%;
+        }
+        .mark{
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity: 0.3;
+            
+        }
+        .current .mark{
+            opacity:0;
+        }
+        .star{
+            position:absolute;
+            right:10px;
+            top:10px;
+            width:20px;
+            height:20px;
+            background:url("images/start.png");
+            background-size:cover;
+            display:none;
+        }
+        button{
+            width: 50px;
+            height: 50px;
+            /* background:rgb(143, 238, 217); */
+            background:linear-gradient(rgb(143, 238, 217),yellowgreen);
+            position:fixed;
+            right:400px;
+            top:40%;
+            border-radius: 50%;
+            box-shadow: 0 0 0 10px rgb(32, 184, 27);
+        }
+        button.current{
+            background:linear-gradient(#e0e0e0,#333);
+            box-shadow: 0 0 0 10px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>明日之星</h3>
+    <div class="content">
+        <div class="item current">
+            <img src="images/1.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/2.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/3.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/4.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/5.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/6.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/7.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/8.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+        <div class="item">
+            <img src="images/9.jpg" alt="">
+            <!-- 黑色层 -->
+            <div class="mark"></div>
+            <!-- 星星 -->
+            <div class="star"></div>
+        </div>
+    </div>
+    <button>play</button>
+</body>
+
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+/* 
+鼠标滑上哪个item的时候，咱们就给谁添加current 这个类名（提前规划好的，mark的亮的状态）
+
+点击的按钮的时候，让content里面的每一项按照指定的顺序依次亮起来
+
+*/
+
+// 指定的顺序
+var order=[0,1,2,5,8,7,6,3,0,4];
+var timer=null;
+var num=-1;
+$(".content .item").mouseover(function(){
+    // 保证唯一性
+    $(this).addClass("current").siblings().removeClass("current");
+});
+
+$("button").click(function(){
+    // 我怎么知道他是否已经结束了？
+    if($(this).hasClass("current")){
+          alert("game over !");
+          return;
+    }
+    timer=setInterval(function(){
+        num++;
+        // 思考：怎么判断已经走完了？规划的order数组的长度是一定的，如果num这个值已经大于order最后一项的索引说明已经走完了
+        if(num>order.length-1){
+            // 清除定时器
+            clearInterval(timer);
+            timer=null;
+            // 说明已经选出来明日之星了，咱们执行以下成功函数
+            success();
+            return;
+        }
+        var value=order[num];
+        $(".content .item").eq(value).addClass("current").siblings().removeClass("current");
+    },500);
+
+    function success(){
+        // 让小星星出现
+        var value=order[num-1];
+        $(".content .item").eq(value).children(".star").fadeIn(function(){
+            $("h3").slideDown(1000);
+        });
+        $("button").addClass("current");
+        $(".content .item").off();
+    }
+
+})
+
+
+</script>

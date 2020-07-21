@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            background:#40454e;
+        }
+        .header{
+            height: 50px;
+            line-height: 50px;
+            background:#000;
+            color:#a7b2bc;
+            text-indent: 50px;
+        }
+        .imgBox{
+            width: 500px;
+            height: 500px;
+            border:1px solid #fff;
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-45%);
+            overflow:hidden;
+
+        }
+        .imgBox img{
+            display:none;
+        }
+        .imgBox img:first-child{
+            display:block;
+        }
+        .fastNav{
+            width:80px;
+            position:absolute;
+            right:100px;
+            top:30%;
+        }
+        .fastNav a{
+            display:block;
+            height:80px;
+            margin-bottom: 10px;
+        }
+        .fastNav a.current{
+            border:2px solid darkturquoise;
+        }
+        .fastNav a img{
+            width:100%;
+            height:100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">苗苗相册</div>
+    <div class="imgBox">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+    </div>
+    <div class="fastNav">
+        <a class="current" href="javascript:;">
+            <img src="images/1.jpg" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/2.jpg" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/3.jpg" alt="">
+        </a>
+        <a href="javascript:;">
+            <img src="images/4.jpg" alt="">
+        </a>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+/*
+ 1:点击右边的快速导航，点击谁就给谁有个选中的状态（规划好了 current） 
+ 2:点击右边那个小图，就让左边出现相应的
+ 让右边的大图都隐藏，给出一张默认显示的
+*/
+
+$(".fastNav>a").click(function(){
+    //点谁给谁添加current类名，让它的兄弟元素移除掉current 
+    $(this).addClass("current").siblings().removeClass("current");
+    var index= $(this).index();
+    $(".imgBox>img").eq(index).fadeIn().siblings().fadeOut();
+})
+</script>

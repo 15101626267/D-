@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background:red;
+            margin:500px;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <button>设置</button>
+   <div class="box"></div>
+  
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+  // 获取某个元素距离body的距离（左边、顶部）, offset 这个是一个对象：{"left":xx,"top":xx}
+  var offset=  $(".box").offset();
+  var offLeft= offset.left;
+  var offTop= offset.top;
+
+  $("button").click(function(){
+      $(".box").offset({
+          "left":200,
+          "top":200
+      })
+  })
+</script>

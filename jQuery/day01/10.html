@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: yellowgreen;
+            position: absolute;
+            left: 0;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>淡入</button>
+    <div class="box"></div>
+</body>
+
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+    // animate 动画
+    $("button").eq(0).click(function () {
+        $(".box").animate({
+            "left": "500px"
+        }, 1000, "linear", function () {
+            $(".box").animate({
+                "top": "500px",
+                "opacity":0.5
+            }, 1000, "linear");
+        });
+
+    })
+
+
+</script>

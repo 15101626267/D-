@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+        // 当css、dom、图片等页面资源都加载完毕之后，再执行的
+        window.onload=function(){
+             var obox=document.getElementById("box");
+             console.log(obox);
+        }
+       
+    </script>
+    <script>
+        /* 
+          当页面中的dom 元素加载完毕之后
+        */
+       $(function(){
+            console.log($("#box")[0]);
+       })
+
+       $(document).ready(function(){
+        console.log($("#box")[0]);
+       })
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>

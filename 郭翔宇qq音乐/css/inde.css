@@ -1,0 +1,133 @@
+html,body,.wrap{
+    height: 100%;
+    overflow: hidden;
+}
+body{
+    color: #fff;
+}
+.wrap{
+    position: relative;
+}
+.bgImg{
+    height: 100%;
+    /* 模糊度 */
+    filter:blur(10px);
+}
+.mark{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* inset 内阴影 */
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.3) inset ;
+    display: flex;
+    flex-direction:column;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.2rem;
+    font-size: 0.24rem;
+    background: rgba(0, 0, 0, 0.6);
+}
+header .singer{
+    display: flex;
+}
+header .singerInfor{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 0.2rem;
+
+}
+header .singerInfor h4{
+    font-size: 0.28rem;
+}
+.singer .singerPhoto{
+    width: 1rem;
+    height: 1rem;
+    border:1px solid #fff;
+    box-sizing: border-box;
+}
+.musicIcon{
+    width: 1rem;
+    height: 1rem;
+}
+.musicIcon.current{
+    animation: circle 2s linear infinite;
+}
+.musicIcon img{
+    width: 100%;
+    height: 100%;
+}
+main{
+    flex:1;
+    position: relative;
+    overflow: hidden;
+}
+main .lyricWrap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.4rem;
+    box-sizing: border-box;   
+}
+/* 歌词选中的颜色 */
+.lyricWrap p.current{
+    color: deepskyblue;
+}
+
+main p{
+    line-height: 0.6rem;
+    font-size: 0.28rem;
+    text-align: center;
+    letter-spacing:3px;
+
+}
+footer{
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.6);
+}
+.progressBox{
+    display: flex;
+    align-items: center;
+}
+.progressTn{
+    flex:1;
+    height: 2px;
+    background: #ffff;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    position: relative;
+}
+.progress{
+    /* width: 10%; */
+    height: 100%;
+    background: deepskyblue;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.downBtn{
+    display: block;
+    width:4rem ;
+    height:1rem ;
+    background: #31c27c url('../images/sprite_play.png') 0.2rem -5.82rem no-repeat;
+    background-size:0.8rem 7rem ;
+    margin: 0.3rem auto 0;
+    border-radius: 0.5rem;
+    font-size:0.32rem ;
+    color: #fff;
+    text-align: center;
+    line-height: 1rem ;
+}
+@keyframes circle{
+    0%{}
+    100%{
+        transform: rotate(360deg);
+    }
+}

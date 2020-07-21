@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .main{
+            width:300px;
+            height:300px;
+            border:2px solid #000;
+            background:darkturquoise;
+            margin:50px auto;
+            position:relative;
+        }
+        .box{
+            width:50px;
+            height:50px;
+            background:lightpink;
+            position:absolute;
+            left:50px;
+            top:50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+    /* 
+      挪动盒子的本质：改变box 这个盒子的left 和top
+      38  上
+      39  右
+      40  下
+      37  左
+    
+    */
+   var step=10,
+   bigW=$(".main").innerWidth(),// 包含padding
+   bigH=$(".main").innerHeight(),// 包含padding
+   smallW=$(".box").innerWidth(),
+   smallH=$(".box").innerHeight(),
+   // 最小的left 和最小的top
+   minL=0,
+   minT=0
+   // 最大的left 和最大的top
+   maxL=bigW-smallW,
+   maxT=bigH-smallH;
+
+   $(document).keydown(function(e){
+        //通过code 咱们可以判断按的是什么键
+        var code=e.keyCode,
+        oldLeft=Number.parseFloat($(".box").css("left")),
+        oldTop=Number.parseFloat($(".box").css("top"));
+        alert(code);
+       
+        /* 
+         38  上
+         39  右
+         40  下
+         37  左
+        */
+       switch (code){
+           case 38:
+               alert(1);
+           var top=oldTop-step;
+        //    if(top<minT){
+        //      top=minT;
+        //    }else if(top>maxT){
+        //      top=maxT;
+        //    }
+           top=top<minT?minT:(top>maxT?maxT:top);
+           conso.log(top);
+           $(".box").css("top",top);
+           break;
+           case 40:
+           var top=oldTop+step;  
+           top=top<minT?minT:(top>maxT?maxT:top);  
+           $(".box").css("top",top);
+           break;
+           case 37:
+           var left=oldLeft-step; 
+        //    if(left<minL){
+        //       left=minL
+        //    }else if(left>maxL){
+        //       left=maxL
+        //    }
+           left=left<minL?minL:(left>maxL?maxL:left);
+           $(".box").css("left",left);
+           break;
+           case 39:
+           var left=oldLeft+step; 
+           left=left<minL?minL:(left>maxL?maxL:left);
+           $(".box").css("left",left);
+           break;
+       }
+
+       
+   })
+</script>

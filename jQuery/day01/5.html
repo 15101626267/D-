@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* width: 100px;
+            height: 100px;
+            background:green; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+    //  获取属性值
+   var w= $(".box").css("width");
+   var h= $(".box").css("height");
+   var bg= $(".box").css("backgroundColor");
+  // console.log(w,h,bg);
+  //设置 一组属性值
+  $(".box").css("backgroundColor","red");
+  // 设置 多组属性值
+  $(".box").css({
+      "width":"100px",
+      "height":100,
+      "background-color":"yellow"
+  })
+</script>

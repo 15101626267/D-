@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+    </div>
+    <p><span>哈哈</span></p>
+    <input type="text" name="lili" value="lili">
+</body>
+
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+  // 可以识别标签，把标签渲染成相应的内容
+  $(".wrap").html("<h2>不忘初心，方得始终</h2>");
+  // 识别不了标签，原封不动的追加到了页面上
+  $(".wrap").text("<h2>不忘初心，方得始终</h2>");
+  
+  // 获取容器里面的标签及内容
+  console.log($("p").html());
+  // 只获取里面的文字内容
+  console.log($("p").text());
+
+  // 获取表单元素的值
+$("input").val();
+  // 给表单元素赋值
+$("input").val("dawei");
+
+
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background:green;
+        }
+    </style>
+</head>
+<body>
+   <div class="box"></div>
+   <input type="text">
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+    // $(".box").click(function(){
+    //     alert(1);
+    // });
+    // 绑定一次，只能执行一次，再点击的时候就没效果了。
+    $(".box").one("click",function(){
+          alert(2);
+    })
+
+    $("input").focus(function(){
+        $(this).val("aa");
+    })
+
+   // $("input").focus();
+    //$("input").trigger("focus");
+    //===> 和前面两种的区别，不会触发默认事件，没有光标
+    $("input").triggerHandler("focus");
+    //自动触发事件
+    // $(".box").click();
+    //$(".box").trigger("click");
+    // $(".box").triggerHandler("click");
+
+</script>

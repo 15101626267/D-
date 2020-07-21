@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p class="current current2"></p>
+    <!-- <div class="main">
+        <p>p</p>
+        <span>span</span>
+        <div>
+            <span>span</span>
+        </div>
+    </div>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="li3">3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul> -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+    /* 
+    获取某个元素的父级 
+    $("p").parent()
+    */
+    //  console.log($("p").parent()[0])
+
+    //===>children() 获取儿子元素
+    //   console.log($(".main").children()) 
+    // ==>find()获取后代方法
+    // $(".main").find("span");
+    // console.log($(".main").find("span"))
+
+   // 获取到所有的兄弟元素 
+   console.log($(".li3").siblings()) ;
+   //  获取到后面的所有的兄弟元素
+   console.log($(".li3").nextAll()) ;
+   //  获取到前面的所有的兄弟元素
+   console.log($(".li3").prevAll()) ;
+ 
+   // 看是否有某个类名，如果有的话，返回的true，如果没有false
+   $(".current").hasClass("current2");
+  
+
+//    if($(".current").hasClass("current2")){
+//        alert(1)
+//    }else{
+//     alert(2)
+//    }
+  // 选中第几个
+  console.log( $("ul>li").eq(2));
+  console.log( $("ul>li:eq(2)"));
+</script>

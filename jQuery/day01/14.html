@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       .wrap{
+         width: 100px;
+         height: 100px;
+         background:green;
+       }
+       li{
+         height: 30px;
+         line-height: 30px;
+       }
+       li:nth-child(odd){
+         background:pink;
+       }
+       li:nth-child(even){
+         background:darkorange;
+       }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+    </div>
+   <ul>
+     <li>1</li>
+     <li>2</li>
+     <li>3</li>
+     <li>4</li>
+     <li>5</li>
+     <li>6</li>
+   </ul>
+</body>
+
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+
+//=====> 绑定单事件  
+//  $(".wrap").click(function(){
+//    alert("你们好呀！")
+//  })
+
+//  $(".wrap").on("click",function(){
+//   alert("你们好呀！")
+//  })
+
+//====> 绑定多事件
+//  $(".wrap").on({
+//      "mouseover":function(){
+//        console.log("滑上")
+//      },
+//      "mouseout":function(){
+//       console.log("离开")
+//      }
+//  });
+
+//===> 如果绑定的多事件，执行函数相同
+//  $(".wrap").on("mouseover mouseout",function(){
+//     alert(1)
+//  });
+
+//===> 参数一：第一个函数代表的时候鼠标滑上执行操作   
+//===> 参数二：第一个函数代表的时候鼠标离开执行操作   
+
+$(".wrap").hover(function(){
+    console.log("鼠标滑上");
+},function(){
+  console.log("鼠标离开");
+}) 
+
+//==> 事件委托
+$("ul").on("click","li",function(){
+   alert(1);
+})
+
+</script>

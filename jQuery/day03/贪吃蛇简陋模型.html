@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:#000;
+        }
+       .main{
+           width: 500px;
+           height: 500px;
+           /* background:darkturquoise; */
+           margin:50px auto;
+           position:relative;
+           border:5px dashed yellow;
+           box-sizing: border-box;
+           background:darkturquoise;
+       }
+       .box{
+           width: 100px;
+           height: 100px;
+           background:pink;
+           position:absolute;
+           left:0px;
+           top:0px;
+       }
+    </style>
+</head>
+<body>
+   <div class="main">
+       <div class="box"></div>
+   </div>
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+    var w=$(".box").outerWidth(),
+        h=$(".box").outerHeight(),
+        minL=0,
+        minT=0,
+        maxL=$(".main").width()-w,
+        maxT=$(".main").height()-h,
+        step=10;
+
+        /* 
+         上：  38
+         右：  39
+         下：  40
+         左：  37
+         */
+    $(document).on("keydown",function(ev){
+       var oldLeft=Number.parseFloat($(".box").css("left")) ;
+       var oldTop=Number.parseFloat($(".box").css("top")) ;
+       var code=ev.keyCode;
+       switch (code){
+             case 38:
+             var targetT=oldTop-step;
+             targetT=targetT<minT?minT:(targetT>maxT?maxT:targetT);
+             console.log(targetT);
+             $(".box").css("top",targetT);
+             break;
+             case 40:
+             var targetT=oldTop+step;
+             targetT=targetT<minT?minT:(targetT>maxT?maxT:targetT);
+             $(".box").css("top",targetT);
+             break;
+             case 37:
+             var targetL=oldLeft-step;
+             targetL=targetL<minL?minL:(targetL>maxL?maxL:targetL);
+             $(".box").css("left",targetL);
+             break;
+             case 39:
+             var targetL=oldLeft+step;
+             targetL=targetL<minL?minL:(targetL>maxL?maxL:targetL);
+             $(".box").css("left",targetL);
+             break;
+
+       }
+    })
+</script>

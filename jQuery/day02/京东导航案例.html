@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration: none;
+        }
+        body{
+            padding:0 100px;
+        }
+        .main{
+            text-align: center;
+            font-size:24px;
+        }
+        h3{
+            height: 100px;
+            line-height: 100px;
+            /* background:deepskyblue */
+            background:linear-gradient(left top,deepskyblue,yellowgreen);
+            background:-webkit-linear-gradient(left top,deepskyblue,yellowgreen);
+            margin:50px 0;
+        }
+        .main>div{
+            height: 600px;
+            line-height: 600px;
+            background:deepskyblue;
+            font-weight: bold;
+        }
+        .fastNav{
+            width: 58px;
+            position:fixed;
+            right:0;
+            top:50%;
+            transform:translateY(-50%);
+            border:1px solid #999;
+            display:none;
+        }
+        .fastNav>a{
+            display:block;
+            padding:10px;
+            height:58px;
+            background:lightblue;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-bottom:1px solid #999;
+            text-align: center;
+            color:#fff;
+        }
+        .fastNav>a:last-child{
+            border-bottom:none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h3>京东秒杀</h3>
+        <div class="module1">京东秒杀</div>
+        <h3>特色优选</h3>
+        <div class="module2">特色优选</div>
+        <h3>频道广场</h3>
+        <div class="module3">频道广场</div>
+        <h3>为你推荐</h3>
+        <div class="module4">为你推荐</div>
+    </div>
+    <div class="fastNav">
+        <a href="javascript:;">京东秒杀</a>
+        <a href="javascript:;">特色优选</a>
+        <a href="javascript:;">频道广场</a>
+        <a href="javascript:;">为你推荐</a>
+    </div>
+</body>
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+    /* 
+      1：默认快速导航隐藏的，当拉动滚动条的时候，拉动的距离（页面卷去的高度）>=module1 距离body顶部的高度，快速导航出现，反之隐藏
+      2：当我点击快速导航里面每个版块名称的时候，就能够跳转到相应的内容版块顶部
+    */
+
+    var module1T=$(".module1").offset().top;
+    // console.log(module1T);
+   // 当滚动条滚动的时候
+   $(window).scroll(function(){
+       // 滚动条滚动的距离
+       var wT=$(this).scrollTop();
+       if(wT>=module1T){
+          $(".fastNav").fadeIn();
+       }else{
+         $(".fastNav").fadeOut(); 
+       }
+   })
+   $(".fastNav a").click(function(){
+         var index=$(this).index();
+        //  console.log(index);
+         // 获取相应模块的一个偏移量
+         var mt= $(".main>div").eq(index).offset().top;
+       // 不能用window，用html
+       $("html").animate({
+           "scrollTop":mt
+       },1000);
+       
+   })
+
+  
+</script>

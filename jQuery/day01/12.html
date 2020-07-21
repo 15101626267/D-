@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+    </style>
+</head>
+
+<body>
+  <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+
+  </ul>
+</body>
+
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+var li=$("<li>我是新建的</li>");
+console.log(li[0]);
+//===> 向容器内部添加----末尾   包含关系
+// $("ul").append(li);
+// li.appendTo("ul");
+//===> 向容器内部添加----开头
+// $("ul").prepend(li);
+
+//====> 外部添加  兄弟关系
+// 前面
+$("ul").before(li);
+// 后面     
+$("ul").after(li);
+
+//====> 删除
+
+// 删除 连带容器也一起删除了
+// $("ul").remove();
+//==>删除容器里面的内容
+$("ul").empty();
+$("ul").html("");
+
+
+</script>

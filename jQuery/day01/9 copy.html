@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background:yellowgreen;
+            display:none;
+            
+        }
+        
+    </style>
+</head>
+<body>
+   
+    <a href="" index="">百度</a>
+    <div class="box"></div>
+    <button>button</button>
+</body>
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+ // 获取固有属性   获取
+//  var value= $("a").prop("href");
+//  var value2=$("a").attr("index");
+//  var value3=$("a").prop("index");
+//  console.log(value3)
+
+
+//====> 给某个属性 设置相应的值
+$("a").attr("index","2");
+$("a").prop("href","http://www.baidu.com");
+ $(".box").data("name","wangpei"); 
+ $("button").click(function(){
+    alert($(".box").data("name"));
+ })
+</script>

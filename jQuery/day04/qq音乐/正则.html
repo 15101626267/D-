@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    var str = "12a珠峰34a珠峰";
+    /* 
+
+    
+    */
+    var res = str.replace(/(\d+)a/g, function () {
+        // 匹配到的符合大正则的字符串 "12a"  "34a"
+        // console.log(arguments[0]);
+        // 小括号（小分组）匹配到的内容 12   34
+        console.log(arguments[1]);
+
+        return "好"
+    });
+</script>

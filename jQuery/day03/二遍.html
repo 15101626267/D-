@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            width: 300px;
+            height: 300px;
+            border: 2px solid #000;
+            background: darkturquoise;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .box {
+            width: 50px;
+            height: 50px;
+            background: lightpink;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+    /* 
+    需求：当我按键盘上的方向键的时候，让盒子往相应的方向进行移动
+    */
+    var step = 10,
+        minL = 0,
+        minT = 0,
+        maxL = $(".main").innerWidth() - $(".box").outerWidth(),
+        maxT = $(".main").innerHeight() - $(".box").outerHeight();
+    $(document).keydown(function (e) {
+        var code = e.keyCode;
+        /* 
+        38 上方向键
+        39  右
+        40  下
+        37  左方向键
+        */
+        var  oldTop = Number.parseFloat($(".box").css("top"));
+        var oldLeft = Number.parseFloat($(".box").css("left"));
+        switch (code) {
+            case 38:
+                // 因为按向上方向键的时候，top值越来越小了
+                tarTop = oldTop - step;
+                // if(tarTop<minT){
+                //     tarTop=minT;
+                // }else if(tarTop>maxT){
+                //     tarTop=maxT;
+                // }
+                tarTop = tarTop < minT ? minT : (tarTop > maxT ? maxT : tarTop);
+                $(".box").css("top", tarTop);
+                break;
+            case 40:
+                // 因为按向上方向键的时候，top值越来越小了
+                tarTop = oldTop + step;
+                tarTop = tarTop < minT ? minT : (tarTop > maxT ? maxT : tarTop);
+                $(".box").css("top", tarTop);
+                break;
+            case 37:
+                // 因为按向上方向键的时候，top值越来越小了
+                tarLeft = oldLeft - step;
+                tarLeft = tarLeft < minL ? minL : (tarLeft > maxL ? maxL : tarLeft);
+                $(".box").css("left", tarLeft);
+                break;
+            case 39:
+                // 因为按向上方向键的时候，top值越来越小了
+                tarLeft = oldLeft +step;
+                tarLeft = tarLeft < minL ? minL : (tarLeft > maxL ? maxL : tarLeft);
+                $(".box").css("left", tarLeft);
+                break;
+        }
+
+    })
+</script>

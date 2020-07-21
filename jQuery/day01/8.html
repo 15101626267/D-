@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background:yellowgreen;
+            display:none;
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <button>下拉</button>
+    <button>上卷</button>
+    <button>切换</button>
+   
+    <div class="box"></div>
+</body>
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+    // 滑动的
+   $("button").eq(0).click(function(){
+       $(".box").slideDown();
+   })
+   $("button").eq(1).click(function(){
+       $(".box").slideUp();
+   })
+   $("button").eq(2).click(function(){
+       // 切换
+       $(".box").slideToggle();
+   })
+   
+</script>

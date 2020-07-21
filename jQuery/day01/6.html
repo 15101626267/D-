@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background:yellowgreen;
+            transition:all 1s linear;
+        }
+        .current{
+          transform: translate(500px,0);
+        }
+    </style>
+</head>
+<body>
+    <button>addClass</button>
+    <button>removeClass</button>
+    <button>toggleClass</button>
+    <div class="box"></div>
+</body>
+</html>
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+   $("button").eq(0).click(function(){
+       //添加类名    
+       $(".box").addClass("current");
+   })
+   $("button").eq(1).click(function(){
+       //添加类名    
+       $(".box").removeClass("current");
+   })
+   $("button").eq(2).click(function(){
+       //如果没有 就添加，如果有就移除  
+       $(".box").toggleClass("current");
+   })
+   
+</script>

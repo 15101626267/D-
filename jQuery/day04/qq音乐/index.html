@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function () {
+            function computed() {
+                // 获取屏幕、设备的宽度
+                var win = document.documentElement.clientWidth || document.body.clientWidth,
+                // 设计稿的宽度
+                    des = 640;
+                if (win >= 640) {
+                    document.documentElement.style.fontSize = "100px";
+                    return;
+                }
+                // 给html设置具体的字体大小
+                document.documentElement.style.fontSize = win / des * 100 + "px";
+
+            };
+            computed();
+
+            window.onresize = function () {
+                computed();
+            }
+
+        })();
+    </script>
+</head>
+<body>
+    <section class="wrap">
+        <img class="bgImg" src="images/myDream.jpg" alt="">
+        <!-- 黑色遮罩层 -->
+        <section class="mark">
+            <header>
+                <!-- 歌手 -->
+                <section class="singer">
+                    <img class="singerPh" src="images/myDream.jpg" alt="">
+                    <section class="singerMessage">
+                        <h4>我的梦</h4>
+                        <p>张靓颖</p>
+                    </section>
+                </section>
+                <!-- 音乐符 -->
+                <section class="musicIcon">
+                    <img src="images/music.svg" alt="">
+                </section>
+            </header>
+            <main>
+                <section class="lyricWrap">
+                    <p>我的梦 (华为手机主题曲) - 张靓颖</p>
+                </section>
+            </main>
+            <footer>
+                <section class="progressBox">
+                    <!-- 已经播放的时长 -->
+                    <span class="currentTime">00:00</span>
+                    <!-- 进度条 -->
+                    <section class="progressIn"></section>
+                    <!-- 总时长 -->
+                    <span>03:00</span>
+                </section>
+                <a class="downBtn" href="javascript:;">下载这首音乐</a>
+            </footer>
+        </section>
+    </section>
+</body>
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/index.js"></script>

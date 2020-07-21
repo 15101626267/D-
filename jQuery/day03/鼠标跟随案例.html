@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: darkturquoise;
+        }
+
+        .wrap {
+            width: 600px;
+            height: 150px;
+            margin: 100px auto;
+            border: 1px solid red;
+        }
+
+        .wrap .item {
+            width: 150px;
+            height: 150px;
+            float: left;
+            box-shadow: 0 0 0 2px #333;
+        }
+
+        .wrap .item img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .bigWrap {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+
+        .bigWrap>img {
+            width: 100%;
+            height: 100%;
+            box-shadow: 0px 0px 50px 10px rgba(0, 0, 0, 1);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="images/small1.png" data-src="images/big1.png" alt="">
+        </div>
+        <div class="item">
+            <img src="images/small2.png" data-src="images/big2.png" alt="">
+        </div>
+        <div class="item">
+            <img src="images/small3.png" data-src="images/big3.png" alt="">
+        </div>
+        <div class="item">
+            <img src="images/small4.png" data-src="images/big4.png" alt="">
+        </div>
+    </div>
+    <!-- 大盒子 -->
+    <div class="bigWrap">
+        <!-- <img src="images/big1.png" alt=""> -->
+    </div>
+</body>
+
+</html>
+<script src="../jquery-1.9.1.min.js"></script>
+<script>
+    // var name = "fangyu";
+    // var p = `大家你们好，我是${name}`;
+    function computed(e){
+        $(".bigWrap").css({
+            "left": e.pageX + 10,
+            "top": e.pageY + 10
+        })
+    }
+    // 鼠标滑上事件
+    $(".wrap .item").mouseover(function (e) {
+        var bigSrc = $(this).children("img").attr("data-src");
+        $(".bigWrap").append(`<img src="${bigSrc}" alt="">`);
+        computed(e);
+
+    }).mouseleave(function (e) {
+        $(".bigWrap").children("img").remove();
+    }).mousemove(function (e) {
+        computed(e);
+    })
+</script>
