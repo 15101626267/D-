@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function () {
+            function computed() {
+                // 获取设备屏幕宽度
+                var win = document.documentElement.clientWidth || document.body.clientWidth,
+                // 设计稿宽度
+                    des = 640;
+                // 如果屏幕的宽度>=设计稿的尺寸，不再动态更改字体大小，就让它是设计稿的大小
+                if (win >= 640) {
+                    document.documentElement.style.fontSize = "100px";
+                    return;
+                }
+                // 给html设置具体的字体大小
+                document.documentElement.style.fontSize = win / des * 100 + "px";
+
+            };
+            computed();
+            // 监听窗口是否发生改变，如果改变，就重新计算
+            window.onresize = function () {
+                computed();
+            }
+        })();
+    </script>
+</head>
+<body>
+    <section class="wrap">
+        <!-- loading 模块 -->
+        <section class="loading">
+            <h3>珠峰培训</h3>
+            <h5>h5场景的交互简历</h5>
+            <section class="progress">
+                <section class="progressIn"></section>
+            </section>
+        </section>
+        <!-- phone 区域 -->
+        <section class="phone">
+            <h3>珠峰培训</h3>
+            <h5>www.zhufengpeixun.cn</h5>
+            <p class="time"></p>
+            <!-- 来电区域 -->
+            <section class="listenWrap" >
+                <section class="telWave"></section>
+                <img src="images/phone-listen.png" alt="">
+                <section class="telMark"></section>
+            </section>
+            <!-- 接听区域 -->
+            <section class="answerWrap">
+                <img src="images/phone-key.png" alt="">
+                <section class="redMark"></section>
+            </section>
+            <!-- 音频 -->
+            <audio id='bellAudio' src="audio/bell.mp3" loop></audio>
+            <audio id='sayAudio' src="audio/say.mp3"></audio>
+        </section>
+    </section>
+</body>
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/index.js"></script>

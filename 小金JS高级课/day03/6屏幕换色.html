@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background:pink;
+        }
+    </style>
+</head>
+<body>
+    <button index="0">蓝色</button>
+    <button index="1">黄色</button>
+    <button index="2">粉色</button>
+    <div id="box"></div>
+</body>
+</html>
+<script>
+    var ary=["blue","yellow","pink"];
+    var buttons=document.getElementsByTagName("button");
+    /* 
+     还需要绑定多次事件
+    */
+    // for(var i=0;i<buttons.length;i++){
+    //      buttons[i].index=i;
+    //      buttons[i].onclick=function(){
+    //             //alert(this.index)
+    //             document.body.style.backgroundColor=ary[this.index];
+    //      }
+    // }
+    document.body.onclick=function(ev){
+          var target=ev.target;
+          alert(target.tagName);
+          /* 
+           通过标签名来判断事件源，如果是button，才执行某个操作
+          */
+          if(target.tagName=="BUTTON"){
+            var index=target.getAttribute("index");
+            document.body.style.backgroundColor=ary[index];
+          }
+          if(target.tagName=="DIV"){
+             alert("呵呵")
+          }
+          
+    }
+   
+
+</script>

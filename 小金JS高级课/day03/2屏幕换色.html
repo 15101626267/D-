@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>蓝色</button>
+    <button>黄色</button>
+    <button>粉色</button>
+</body>
+</html>
+<script>
+    /* 
+     点击哪个按钮的时候，就让屏幕出现相应的颜色
+    */
+    var ary=["blue","yellow","pink"];
+    var buttons=document.getElementsByTagName("button");
+    for(var i=0;i<buttons.length;i++){
+        (function(i){
+            buttons[i].onclick=function(){
+            document.body.style.backgroundColor=ary[i];
+            }
+        })(i);
+    }
+    
+    /* 
+     buttons[0].onclick=""
+     buttons[1].onclick=""
+     buttons[2].onclick=""
+     i=3
+     当我点击按钮的时候，让绑定的函数执行，那个函数里面没有私有变量i，就会向上级找，全局的i i=3；
+    
+    */
+   
+    
+
+</script>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.min.css">
+    <!-- swiper插件的css -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- 3D折纸效果的css -->
+    <link rel="stylesheet" href="css/makisu.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script>
+        (function () {
+            function computed() {
+                // 获取设备屏幕宽度
+                var win = document.documentElement.clientWidth || document.body.clientWidth,
+                    // 设计稿宽度
+                    des = 640;
+                // 如果屏幕的宽度>=设计稿的尺寸，不再动态更改字体大小，就让它是设计稿的大小
+                if (win >= 640) {
+                    document.documentElement.style.fontSize = "100px";
+                    return;
+                }
+                // 给html设置具体的字体大小
+                document.documentElement.style.fontSize = win / des * 100 + "px";
+
+            };
+            computed();
+            // 监听窗口是否发生改变，如果改变，就重新计算
+            window.onresize = function () {
+                computed();
+            }
+        })();
+    </script>
+</head>
+
+<body>
+    <section class="wrap">
+        <!-- loading 区域 -->
+        <section class="loading">
+            <h3>珠峰培训</h3>
+            <h5>h5场景的交互简历</h5>
+            <section class="progressWrap">
+                <section class="progressIn"></section>
+            </section>
+        </section>
+        <!-- phone 区域 -->
+        <section class="phone">
+            <h3>珠峰培训</h3>
+            <h5>www.zhufengpeixun</h5>
+            <p class="time"></p>
+            <!-- 来电区域 -->
+            <section class="listenWrap">
+                <!-- 接听音浪 -->
+                <section class="telWave"></section>
+                <img src="images/phone-listen.png" alt="">
+                <!-- 绿色电话区域 -->
+                <section class="telMark"></section>
+            </section>
+            <!-- 接听区域 -->
+            <section class="answerWrap">
+                <img src="images/phone-key.png" alt="">
+                <section class="redMark"></section>
+            </section>
+            <audio id="bellAudio" src="audio/bell.mp3" loop></audio>
+            <audio id="sayAudio" src="audio/say.mp3"></audio>
+        </section>
+        <!-- message 区域 -->
+        <section class="message">
+            <!-- 对话框 -->
+            <ul class="talkWrap">
+                <li class="self">
+                    <img class="photo" src="images/message-head1.png" alt="">
+                    <p>今天晴天了！</p>
+                </li>
+                <li class="other">
+                    <p>开车出去玩吧！</p>
+                    <img class="photo" src="images/message-head2.png" alt="">
+                </li>
+                <!-- <li class="self">
+                    <img class="photo" src="images/message-head1.png" alt="">
+                     <p>本小姐考虑考虑~</p>
+                 </li> -->
+                <li class="other">
+                    <p>考虑啥啊，你代码敲的还不累吗</p>
+                    <img class="photo" src="images/message-head2.png" alt="">
+                </li>
+                <li class="self">
+                    <img class="photo" src="images/message-head1.png" alt="">
+                    <p>累死了呀，大脑细胞死了一大片</p>
+                </li>
+                <li class="other">
+                    <p>那你还敲，还不出去透透气？</p>
+                    <img class="photo" src="images/message-head2.png" alt="">
+                </li>
+                <li class="self">
+                    <img class="photo" src="images/message-head1.png" alt="">
+                    <p>但是我作业还没写完呢？</p>
+                </li>
+                <li class="other">
+                    <p>你到底去不去，不去我找别人了，整天把生活过的这么苦逼</p>
+                    <img class="photo" src="images/message-head2.png" alt="">
+                </li>
+                <li class="self">
+                    <img class="photo" src="images/message-head1.png" alt="">
+                    <p>等我，我去~~~</p>
+                </li>
+                <li class="other">
+                    <p>这就对了吗，除了代码，还有诗和远方</p>
+                    <img class="photo" src="images/message-head2.png" alt="">
+                </li>
+                <li class="self">
+                    <img class="photo" src="images/message-head1.png" alt="">
+                    <p>嗯，嗯，及时享乐~~~</p>
+                </li>
+            </ul>
+            <!-- 键盘区 -->
+            <section class="keybordWrap">
+                <img src="images/message-keyboard.png" alt="">
+                <section class="btn">发送</section>
+                <!-- 文本 -->
+                <input class="keybords" type="text">
+            </section>
+            <audio src="audio/music.mp3" loop></audio>
+        </section>
+        <!-- cube 区域 -->
+        <section class="cube">
+            <!-- 魔方 -->
+            <ul class="cubeBox">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- 链接区 -->
+            <section class="links">
+                <a href="javascript:;">
+                    <img src="images/cube-img1.png" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="images/cube-img2.png" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="images/cube-img3.png" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="images/cube-img4.png" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="images/cube-img5.png" alt="">
+                </a>
+                <a href="javascript:;">
+                    <img src="images/cube-img6.png" alt="">
+                </a>
+            </section>
+        </section>
+        <!-- detail 区域 -->
+        <section class="detail">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- 第一页 -->
+                    <div class="swiper-slide page0">
+                        <dl class="outline">
+                            <dt>课程大纲</dt>
+                            <dd>
+                                <em class="icon">1</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">2</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">3</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">4</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">5</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">6</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">7</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                            <dd>
+                                <em class="icon">8</em>
+                                <span>javascript的核心基础部分</span>
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- 第二页 -->
+                    <div class="swiper-slide  page1" >
+                        <h3>课程体系</h3>
+                        <section class="imgBox">
+                            <img src="images/course-icon1.png" alt="">
+                            <img src="images/course-icon2.png" alt="">
+                            <img src="images/course-icon3.png" alt="">
+                            <img src="images/course-icon4.png" alt="">
+                            <img src="images/course-icon5.png" alt="">
+                            <img src="images/course-icon6.png" alt="">
+                            <img src="images/course-icon7.png" alt="">
+                            <img src="images/course-pocket.png" alt="">
+                        </section>
+                    </div>
+                    <!-- 第三页 -->
+                    <div class="swiper-slide  page2">
+                        <h4 class="title1">名师云集</h4>
+                        <h4 class="title2">人才摇篮</h4>
+                        <ul class=" clearfix">
+                            <li>
+                                <section></section>
+                                <h5>周啸天</h5>
+                                <p>珠峰培训教学总监 享誉国内的前端名师</p>
+                            </li>
+                            <li>
+                                <section></section>
+                                <h5>周啸天</h5>
+                                <p>珠峰培训教学总监 享誉国内的前端名师</p>
+                            </li>
+                            <li>
+                                <section></section>
+                                <h5>周啸天</h5>
+                                <p>珠峰培训教学总监 享誉国内的前端名师</p>
+                            </li>
+                            <li>
+                                <section></section>
+                                <h5>周啸天</h5>
+                                <p>珠峰培训教学总监 享誉国内的前端名师</p>
+                            </li>
+                            <li>
+                                <section></section>
+                                <h5>周啸天</h5>
+                                <p>珠峰培训教学总监 享誉国内的前端名师</p>
+                            </li>
+                            <li>
+                                <section></section>
+                                <h5>周啸天</h5>
+                                <p>珠峰培训教学总监 享誉国内的前端名师</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 第四页 -->
+                    <div class="swiper-slide  page3">
+                        <img src="images/school-img1.jpg" alt="">
+                        <img src="images/school-img2.jpg" alt="">
+                        <img src="images/school-img3.jpg" alt="">
+                        <img src="images/school-bot1.png" alt="">
+                        <img src="images/school-bot2.png" alt="">
+                    </div>
+                     <!-- 第五页 -->
+                    <div class="swiper-slide  page4">
+                        <section class="part1">
+                            <p>没有招生部门</p>
+                            <p>但学生数量<span>每年翻倍 ! !</span></p>
+                            <p>没有就业部门</p>
+                            <p>但学生平均工资<span>超一万二 !</span></p>
+                        </section>
+                        <section class="part2">
+                            <h3>就业信息</h3>
+                            <section class="jobImg">
+                                <img src="images/zf-jobTable.png" alt="">
+                            </section>
+                        </section>
+                    </div>
+                    <!-- 第六页 -->
+                    <div class="swiper-slide  page5">
+                        <h3>联系我们</h3>
+                        <h6>concat us</h6> 
+                        <section class="first">
+                            <img src="images/concat-icon1.png" alt="">
+                            <section class="tel">
+                                <p>QQ：14475605</p>
+                                <p>TEL：4001806960</p>
+                                <P>手机：1501006859</P>
+                            </section>
+                        </section>
+                        <section class="last">
+                            <img src="images/concat-icon2.png" alt="">
+                            <section class='address'>
+                                <p>学校地址：</p>
+                                <P>北京昌平区回龙观大街3号楼02号东段珠峰培训</P>
+                            </section>            
+                        </section>
+                        <section class="imgLast"></section>
+                    </div>
+                </div>                
+            </div>
+            <section class="arrow"></section>
+        </section>
+    </section>
+</body>
+
+</html>
+<script src="js/jquery-1.9.1.min.js"></script>
+<!-- swiper插件的js -->
+<script src="js/swiper.min.js"></script>
+<!-- 3D折纸效果的js -->
+<script src="js/makisu.js"></script>
+<script src='js/index.js'></script>
+<script>
+    // 入口函数
+    // $(document).ready(function () {
+    //     // 初始化Swiper
+    //     var mySwiper = new Swiper('.swiper-container', {
+    //         direction: 'horizontal',
+    //         effect:'coverflow',           
+    //     })
+    // })
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>蓝色</button>
+    <button>黄色</button>
+    <button>粉色</button>
+</body>
+</html>
+<script>
+    var ary=["blue","yellow","pink"];
+    var buttons=document.getElementsByTagName("button");
+    for(var i=0;i<buttons.length;i++){
+        /* 
+        第一次： buttons[0].index=0
+        第二次： buttons[1].index=1
+        第三次： buttons[2].index=2
+        */
+         buttons[i].index=i;
+         buttons[i].onclick=function(){
+                //alert(this.index)
+                document.body.style.backgroundColor=ary[this.index];
+         }
+    }
+    
+   
+
+</script>
